@@ -18,7 +18,13 @@ public class UserJoinServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String uid=request.getParameter("uid");
+		String upw=request.getParameter("upw");
+		String unm=request.getParameter("unm");
+		int gender=MyUtil.ToIntParam("gender", request);
 	
+		System.out.println(uid+upw+unm+gender);
+		response.sendRedirect("login");
 	}
 
 }

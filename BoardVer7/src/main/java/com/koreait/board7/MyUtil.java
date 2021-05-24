@@ -11,10 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.koreait.board7.user.UserVO;
-
-
-
+import com.koreait.board7.user.UserEntity;
 
 public class MyUtil{
 	public static void openJSP(String title, String page,HttpServletRequest req, HttpServletResponse res) throws IOException,ServletException {
@@ -70,8 +67,8 @@ public class MyUtil{
 	public static int ToIntParam(String str,HttpServletRequest req) {
 		return Integer.parseInt(req.getParameter(str));
 	}
-	public static UserVO getUser(String str,HttpServletRequest req) {
-		UserVO user= (UserVO)req.getSession().getAttribute(str);
+	public static UserEntity getUser(String str,HttpServletRequest req) {
+		UserEntity user= (UserEntity)req.getSession().getAttribute(str);
 		return user;
 	}
 	

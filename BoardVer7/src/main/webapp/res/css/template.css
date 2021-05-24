@@ -1,0 +1,25 @@
+@charset "UTF-8";
+html,body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+header nav{
+	height: 100%;
+	background-color:black;
+	color:silver;
+}
+header nav ul{
+	margin:0;
+	display: flex;
+	list-style: none;
+	justify-content: center;
+}
+header nav ul li{
+	margin:0px 10px;
+}
+header nav ul li a,a:visited{	
+	text-decoration: none;
+	color:silver;	
+}
