@@ -17,7 +17,7 @@
 				<li><a href="/user/login">LOGIN</a></li>
 			</c:if>			
 			<c:if test="${sessionScope.loginUser ne null}">						
-				<li><a href="/user/login">LOGOUT</a></li>
+				<li><a href="/user/logout">LOGOUT</a></li>
 				<li><a href="/board/write">WRITE</a></li>
 				<li><a href="/board/like">LIKE</a></li>
 			</c:if>			

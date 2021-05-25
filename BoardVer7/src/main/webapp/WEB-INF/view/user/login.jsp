@@ -8,6 +8,7 @@
 		Password:<input type="password" name="upw">
 	</div>
 	<div>
+		<input type="hidden" name="address" value="${address}">
 		<input type="submit" id="log_button" value="Login"> <input
 			type="reset" value="Reset">
 	</div>

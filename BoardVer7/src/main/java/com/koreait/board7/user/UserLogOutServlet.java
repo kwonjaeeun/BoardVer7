@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 public class UserLogOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		if(request.getSession().getAttribute("loginUser")!=null) {
+			request.getSession().setAttribute("loginUser", null);
+		}
+		response.sendRedirect(request.getHeader("referer"));
 	}
 
 }

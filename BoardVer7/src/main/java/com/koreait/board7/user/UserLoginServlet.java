@@ -18,6 +18,7 @@ public class UserLoginServlet extends HttpServlet {
 		if(request.getSession().getAttribute("loginUser")!=null) {
 			request.getSession().setAttribute("loginUser", null);
 		}
+		request.setAttribute("address", request.getHeader("referer"));
 		MyUtil.openJSP("login","user/login", request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +34,7 @@ public class UserLoginServlet extends HttpServlet {
 			vo.setUpw(null);
 			HttpSession hs= request.getSession();
 			hs.setAttribute("loginUser", vo);
-			response.sendRedirect("/board/list");
+			response.sendRedirect(request.getParameter("address"));
 			return;
 		}else {
 			request.setAttribute("errmsg", "비밀번호를 확인해 주세요");
