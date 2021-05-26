@@ -21,7 +21,6 @@ public class BoardDAO {
 			switch (param.getSearchType()) {
 			case 1:
 				pstmtctnt+=" title like '%"+param.getSearchText()+"%' or ctnt ";
-				System.out.println("1");
 				break;
 			case 2:
 				pstmtctnt+=" title ";
@@ -38,10 +37,8 @@ public class BoardDAO {
 			pstmt.setString(1, "%" + param.getSearchText() + "%");
 			pstmt.setInt(2, param.getStartIdx());
 			pstmt.setInt(3, param.getRecordCnt());
-			System.out.println(pstmt);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				System.out.println("11111");
 				vo = new BoardDomain();
 				vo.setIboard(rs.getInt(1));
 				vo.setTitle(rs.getString(2));
@@ -50,7 +47,6 @@ public class BoardDAO {
 				vo.setRegdt(rs.getString(5));
 				list.add(vo);
 			}
-			System.out.println("222");
 		} catch (Exception ex) {
 			System.out.println("오류발생:" + ex);
 		} finally {
@@ -98,8 +94,8 @@ public class BoardDAO {
 		return result;
 	}
 
-	public static BoardEntity selBoard(BoardEntity param) {
-		BoardEntity vo = null;
+	public static BoardDomain selBoard(BoardEntity param) {
+		BoardDomain vo = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -110,11 +106,11 @@ public class BoardDAO {
 			pstmt.setInt(1, param.getIboard());
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				vo = new BoardEntity();
+				vo = new BoardDomain();
 				vo.setIboard(rs.getInt(1));
 				vo.setTitle(rs.getString(2));
 				vo.setCtnt(rs.getString(3));
-				vo.setUnm(rs.getString(4));
+				vo.setWriterNm(rs.getString(4));
 				vo.setRegdt(rs.getString(5));
 				vo.setIuser(rs.getInt(6));
 			}
@@ -145,8 +141,8 @@ public class BoardDAO {
 		}
 	}
 
-	public static BoardEntity printdetail(int iboard) {
-		BoardEntity vo = null;
+	public static BoardDomain printdetail(int iboard) {
+		BoardDomain vo = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -157,11 +153,11 @@ public class BoardDAO {
 			pstmt.setInt(1, iboard);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				vo = new BoardEntity();
+				vo = new BoardDomain();
 				vo.setIboard(rs.getInt(1));
 				vo.setTitle(rs.getString(2));
 				vo.setCtnt(rs.getString(3));
-				vo.setUnm(rs.getString(4));
+				vo.setWriterNm(rs.getString(4));
 				vo.setRegdt(rs.getString(5));
 				vo.setIuser(rs.getInt(6));
 			}

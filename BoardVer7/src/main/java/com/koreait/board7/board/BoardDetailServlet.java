@@ -22,10 +22,10 @@ public class BoardDetailServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int iboard=MyUtil.ToIntParam("iboard", request);
-		System.out.println("iboard:"+iboard);
 		BoardEntity param = new BoardEntity();
 		param.setIboard(iboard);
-		BoardEntity result= BoardDAO.selBoard(param);
+		BoardDomain result= BoardDAO.selBoard(param);
+		response.setCharacterEncoding("UTF-8");
 		PrintWriter pw =response.getWriter();
 		Gson gson= new Gson();
 		String json = gson.toJson(result);

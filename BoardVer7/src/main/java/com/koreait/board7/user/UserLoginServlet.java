@@ -27,6 +27,7 @@ public class UserLoginServlet extends HttpServlet {
 		vo.setUid(request.getParameter("uid"));
 		vo=UserDAO.selUser(vo);
 		if(vo==null) {
+			request.setAttribute("address", request.getParameter("address"));
 			request.setAttribute("errmsg", "아이디를 확인해 주세요");
 			MyUtil.openJSP("login","user/login", request, response);
 			return;
@@ -37,6 +38,7 @@ public class UserLoginServlet extends HttpServlet {
 			response.sendRedirect(request.getParameter("address"));
 			return;
 		}else {
+			request.setAttribute("address", request.getParameter("address"));
 			request.setAttribute("errmsg", "비밀번호를 확인해 주세요");
 			MyUtil.openJSP("login","user/login", request, response);
 			return;

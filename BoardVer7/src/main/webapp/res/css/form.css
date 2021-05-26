@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #FFFAF0;
+	text-align: center;
+}
+
+a, a:active, a:checked {
+	text-decoration: none;
+	color: #264040;
+	margin: 1rem;
+}
+
+.center_board {
+	width: 100%;
+}
+
+.b_title {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: auto;
+}
+
+.navi_container {
+	height: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+form#listform, #listform2 {
+	height: 50%;
+	width: 80%;
+	border: 1px solid black;
+	background-color: white;
+	margin: 5rem auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: auto;
+}
+
+input {
+	margin: 1rem;
+}
+
+.ibox {
+	width: 100px;
+	display: inline-block;
+}
+
+form#listform {
+	max-height: 80%;
+	overflow: auto;
+	justify-content: flex-start;
+}
+
+tr.ctr:hover {
+	cursor: pointer;
+}
+
+div#comment {
+	display: none;
+}
+
+div#demain {
+	height: 50%;
+	width: 80%;
+	border: 1px solid black;
+	background-color: white;
+	margin: 5rem auto;
+}
+
+#commform, #upcform {
+	height: 50%;
+	width: 80%;
+	border: 1px solid black;
+	background-color: white;
+	margin: 5rem auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	width: 25%;
+}
+
+#tarow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.hidden {
+	display: none;
+}
+
+#like_btn {
+	width: 15%;
+	background: none;
+	border: none;
+}

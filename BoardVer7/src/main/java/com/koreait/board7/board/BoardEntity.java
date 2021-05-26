@@ -7,8 +7,7 @@ public class BoardEntity {
 	private int iuser;
 	private String regdt;
 	private int like=0;
-	
-	private String unm;
+
 	
 	public int getIboard() {
 		return iboard;
@@ -39,12 +38,6 @@ public class BoardEntity {
 	}
 	public void setRegdt(String regdt) {
 		this.regdt = regdt;
-	}
-	public String getUnm() {
-		return unm;
-	}
-	public void setUnm(String unm) {
-		this.unm = unm;
 	}
 	public int getLike() {
 		return like;
