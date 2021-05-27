@@ -22,7 +22,7 @@
 			var delmodElem=document.querySelector('#delmod');
 			iboardElem.innerText=data.iboard;
 			titleElem.innerText=data.title;
-			regdtElem.innerText=data.regdt;
+			regdtElem.innerText=data.regdt; 
 			writterElem.innerText=data.writerNm;
 			ctntElem.innerText=data.ctnt;
 				if(login==data.iuser){
